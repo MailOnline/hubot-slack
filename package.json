@@ -6,7 +6,9 @@
   "scripts": {
     "test": "npm run mocha && istanbul report text-summary lcov",
     "codecov": "codecov",
-    "mocha": "mocha --compilers coffee:coffee-script/register  --require coffee-coverage/register-istanbul --reporter spec test"
+    "mocha": "mocha --compilers coffee:coffee-script/register  --require coffee-coverage/register-istanbul --reporter spec test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "hubot",
@@ -26,7 +28,8 @@
   "dependencies": {
     "@slack/client": "^3.4.0",
     "chai": "^3.5.0",
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "coffee-coverage": "~1.0.1",
@@ -80,5 +83,6 @@
       "email": "aoberoi@gmail.com",
       "name": "Ankur Oberoi"
     }
-  ]
+  ],
+  "snyk": true
 }
